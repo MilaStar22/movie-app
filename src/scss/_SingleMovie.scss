@@ -1,0 +1,64 @@
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $layoutWidth: 1400 - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / 1090));
+}
+
+.single-movie {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 60px;
+  img {
+    width: 100%;
+    min-width: 50%;
+    height: 100%;
+    border-radius: 20px; 
+    border: 2px solid hsl(240, 3%, 6%);
+  }
+  .about_single_movie {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10%;
+    line-height: 28px;
+    .title {
+      @include adaptiv-font(25, 20);
+      font-weight: 700;
+      color: rgb(22, 22, 207);
+    }
+    h4 {
+      @include adaptiv-font(20, 16);
+      font-weight: 700;
+    }
+    h5 {
+      color: rgb(22, 22, 207);
+    }
+    .movie_about {
+      width: 80%;
+      @include adaptiv-font(20, 16);
+    }
+    span {
+      @include adaptiv-font(18, 15);
+      font-weight: 700;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #fd6500;
+      font-weight: 700;
+      @include adaptiv-font(18, 13);
+    }
+  }
+}
+@media (max-width: 870px) {
+  .single-movie .about_single_movie {
+    line-height: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .single-movie {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

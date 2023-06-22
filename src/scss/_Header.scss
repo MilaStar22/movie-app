@@ -1,0 +1,176 @@
+@use "./mixins";
+
+header {
+  .header {
+    display: grid;
+    grid-template-columns: 160px 1fr 200px;
+    row-gap: 25px;
+    background-color: black;
+    justify-content: center;
+    align-items: center; 
+    padding: 15px 10px; 
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    .logo img {
+      width: 160px;
+      height: auto;
+    }
+    nav {
+      display: block;
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;  
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        @include mixins.adaptiv-font(25, 20);
+        font-weight: normal;
+        line-height: 28px;
+        letter-spacing: 1px;
+        &:hover {
+          color:rgb(234, 186, 26);
+        }
+      }
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      button {
+        border-radius: 50%;
+        border: 1px solid #fff;
+        background-color: unset;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+      }
+    }
+    .burger-menu {
+      display: none;
+      span {
+        display: block;
+        background-color: #fff;
+        width: 40px;
+        height: 2px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header .header {
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "logo burger"
+                         "menu menu"
+                         "search btn";
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    .logo {
+      grid-area: logo;
+    }
+    .search {
+      grid-area: search;
+    }
+    .btn {
+      grid-area: btn;
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+    nav {
+      grid-area: menu;
+      overflow: hidden;
+      height: 0;
+      transform: translate(-150%);
+    }
+    .burger-menu {
+      grid-area: burger;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: flex-end;
+      width: 42px;
+      height: 42px;
+      span {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 26px;
+          height: 2px;
+          background-color: #fff;
+          transform: translateY(-8px);
+          transition: 0.4s;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 26px;
+          height: 2px;
+          margin-left: 15px;
+          background-color: #fff;
+          transform: translateY(8px);
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+  header .header .burger-menu-active {
+    span {
+      height: 0;
+      &::before {
+        transform: rotate(45deg);
+        width: 42px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        width: 42px;
+        margin-left: 0;
+      }
+    }
+  }
+  header .active nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+    height: auto;
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 0;
+      gap: 15px;
+      background-color: rgb(234, 186, 26);
+      background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+      li:not(:last-child) {
+        width: 50%;
+        border-bottom: 1px solid black;
+      }
+      a {
+        color: #000;
+        margin-left: 20px;
+        &:hover {
+          font-weight: bolder;
+        }
+      }   
+    }
+  }
+}
+@media (max-width: 400px) {
+  header .header {
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "logo burger"
+                         "menu menu"
+                         "btn btn"
+                         "search search";
+    .btn {
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}

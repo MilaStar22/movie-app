@@ -1,0 +1,31 @@
+@import '../../node_modules/reset-css/sass/reset';
+@import "Header";
+@import "MoviesList";
+@import "SingleMovie";
+@import "Search";
+@import "MainSlider";
+@import "Contacts";
+@import "NavWithImg";
+@import "Footer";
+@import "Error";
+
+// sass src/scss/style.scss src/css/style.css --watch
+body {
+  font-family: "Montserrat", sans-serif;  
+  background-color: rgb(240, 233, 233);
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 15px;
+  box-sizing: border-box; // avoid scroll
+}
+main {
+  padding: 1rem 0;
+}
+svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}

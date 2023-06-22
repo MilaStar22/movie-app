@@ -1,0 +1,48 @@
+@use "./mixins";
+
+.contacts  {
+  position: relative;
+  top: 0;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .contacts_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    min-height: 300px;
+    h1 {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+      @include mixins.adaptiv-font(38, 28);
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      gap: 15px;  
+      a {
+        @include mixins.adaptiv-font(22, 16);
+        font-weight: 400;
+        color: #6e777d;
+        text-decoration: none;
+      }
+      span {
+        width: 1px;
+        background-color: #fff;
+        color: rgba(white, 0);
+      }
+    }
+  }
+}
