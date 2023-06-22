@@ -86,6 +86,9 @@ header {
       overflow: hidden;
       height: 0;
       transform: translate(-150%);
+      a:hover {
+        color: #fff;
+      }
     }
     .burger-menu {
       grid-area: burger;

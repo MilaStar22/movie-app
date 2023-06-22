@@ -142,6 +142,9 @@ header .header .burger-menu span {
     height: 0;
     transform: translate(-150%);
   }
+  header .header nav a:hover {
+    color: #fff;
+  }
   header .header .burger-menu {
     grid-area: burger;
     position: relative;
@@ -413,11 +416,14 @@ header .header .burger-menu span {
   cursor: pointer;
 }
 
-.contacts {
+.contacts_wrapper {
+  position: relative;
+}
+.contacts_wrapper .contacts {
   position: relative;
   top: 0;
 }
-.contacts img {
+.contacts_wrapper .contacts img {
   position: absolute;
   top: 0;
   left: 0;
@@ -425,7 +431,7 @@ header .header .burger-menu span {
   height: 100%;
   object-fit: cover;
 }
-.contacts .contacts_content {
+.contacts_wrapper .contacts .contacts_content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -434,32 +440,127 @@ header .header .burger-menu span {
   z-index: 2;
   min-height: 300px;
 }
-.contacts .contacts_content h1 {
+.contacts_wrapper .contacts .contacts_content h1 {
   font-weight: 600;
   color: #fff;
   margin-bottom: 10px;
   font-size: calc(28px + 10 * ((100vw - 320px) / 1080));
   letter-spacing: 1px;
 }
-.contacts .contacts_content .subtitle {
+.contacts_wrapper .contacts .contacts_content .subtitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
   gap: 15px;
 }
-.contacts .contacts_content .subtitle a {
+.contacts_wrapper .contacts .contacts_content .subtitle a {
   font-size: calc(16px + 6 * ((100vw - 320px) / 1080));
   font-weight: 400;
   color: #6e777d;
   text-decoration: none;
 }
-.contacts .contacts_content .subtitle span {
+.contacts_wrapper .contacts .contacts_content .subtitle span {
   width: 1px;
   background-color: #fff;
   color: rgba(255, 255, 255, 0);
 }
+.contacts_wrapper .form_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin: 50px 20px;
+}
+.contacts_wrapper .form_container .contacts_description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contacts_wrapper .form_container .contacts_description .item_description {
+  display: flex;
+  gap: 25px;
+}
+.contacts_wrapper .form_container .contacts_description .item_description svg {
+  width: 25px;
+  height: 25px;
+  fill: #000;
+}
+.contacts_wrapper .form_container .contacts_description .item_description .item_about h2 {
+  font-size: calc(20px + 5 * ((100vw - 320px) / 1080));
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.contacts_wrapper .form_container .contacts_description .item_description .item_about p {
+  font-size: calc(15px + 5 * ((100vw - 320px) / 1080));
+  margin-bottom: 10px;
+}
+.contacts_wrapper .form_container .form {
+  display: grid;
+  grid-template-areas: "name email" "subject subject" "message message" "submit submit";
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.contacts_wrapper .form_container .form .input_name, .contacts_wrapper .form_container .form .input_email, .contacts_wrapper .form_container .form .input_subject, .contacts_wrapper .form_container .form .input_message, .contacts_wrapper .form_container .form .input_submit {
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  padding: 0 20px;
+  border: 1px solid #cecaca;
+}
+.contacts_wrapper .form_container .form .input_name {
+  grid-area: name;
+}
+.contacts_wrapper .form_container .form .input_email {
+  grid-area: email;
+}
+.contacts_wrapper .form_container .form .input_subject {
+  grid-area: subject;
+}
+.contacts_wrapper .form_container .form .input_message {
+  grid-area: message;
+  height: 150px;
+}
+.contacts_wrapper .form_container .form .input_submit {
+  grid-area: submit;
+  background-color: rgba 0, 0, 0, 0.7;
+  border: 1px solid #9b9696;
+  color: #171717;
+}
+.contacts_wrapper .form_container .form .input_submit:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+  cursor: pointer;
+}
+.contacts_wrapper .map {
+  position: relative;
+  margin: 0 auto;
+  width: 80vw;
+  height: 400px;
+}
+.contacts_wrapper .map .map_marker {
+  color: red;
+  background-image: url("https://i.postimg.cc/30jd33nS/Pin.png");
+}
 
+@media (max-width: 768px) {
+  .contacts_wrapper .form_container {
+    flex-direction: column;
+  }
+  .contacts_wrapper .form_container .contacts_description {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 472px) {
+  .contacts_wrapper .form_container .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 nav li a img {
   width: 25px;
   height: 25px;

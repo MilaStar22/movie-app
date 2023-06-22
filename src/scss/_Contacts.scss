@@ -1,48 +1,153 @@
 @use "./mixins";
 
-.contacts  {
+.contacts_wrapper {
   position: relative;
-  top: 0;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .contacts_content {
+  .contacts  {
     position: relative;
+    top: 0;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .contacts_content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      min-height: 300px;
+      h1 {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+        @include mixins.adaptiv-font(38, 28);
+        letter-spacing: 1px;
+      }
+      .subtitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        gap: 15px;  
+        a {
+          @include mixins.adaptiv-font(22, 16);
+          font-weight: 400;
+          color: #6e777d;
+          text-decoration: none;
+        }
+        span {
+          width: 1px;
+          background-color: #fff;
+          color: rgba(white, 0);
+        }
+      }
+    }
+  }
+  .form_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    margin: 50px 20px;
+    .contacts_description {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .item_description {
+        display: flex;
+        gap: 25px;
+        svg {
+          width: 25px;
+          height: 25px;
+          fill: #000;
+        }
+        .item_about {
+          h2 {
+            @include mixins.adaptiv-font(25, 20);
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
+          p {
+            @include mixins.adaptiv-font(20, 15);
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .form {
+      display: grid;
+      grid-template-areas: "name email"
+                          "subject subject"
+                          "message message"
+                          "submit submit";
+      gap: 15px;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .input_name, .input_email, .input_subject, .input_message, .input_submit {
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        padding: 0 20px;
+        border: 1px solid #cecaca;
+      }
+      .input_name {
+        grid-area: name;
+      }
+      .input_email {
+        grid-area: email;
+      }
+      .input_subject {
+        grid-area: subject;
+      }
+      .input_message {
+        grid-area: message;
+        height: 150px;
+      }
+      .input_submit {
+        grid-area: submit;
+        background-color: rgba (0, 0, 0, 0.7);
+        border: 1px solid #9b9696;
+        color: #171717;
+        &:hover {
+          background-color: rgb(234, 186, 26);
+          background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .map {
+    position: relative;
+    margin: 0 auto;
+    width: 80vw;
+    height: 400px;
+
+    .map_marker {
+      color: red;
+      background-image: url("https://i.postimg.cc/30jd33nS/Pin.png");
+    }
+  }
+}
+@media (max-width: 768px) {
+  .contacts_wrapper .form_container {
+    flex-direction: column;
+    .contacts_description {
+      margin-bottom: 15px;
+    }
+  }
+}
+@media (max-width: 472px) {
+  .contacts_wrapper .form_container .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    min-height: 300px;
-    h1 {
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 10px;
-      @include mixins.adaptiv-font(38, 28);
-      letter-spacing: 1px;
-    }
-    .subtitle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-      gap: 15px;  
-      a {
-        @include mixins.adaptiv-font(22, 16);
-        font-weight: 400;
-        color: #6e777d;
-        text-decoration: none;
-      }
-      span {
-        width: 1px;
-        background-color: #fff;
-        color: rgba(white, 0);
-      }
-    }
   }
 }
