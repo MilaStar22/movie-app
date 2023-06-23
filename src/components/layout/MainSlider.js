@@ -60,13 +60,9 @@ function MainSlider() {
               width: 780,
               slidesPerView: 2,
             },
-            1100: {
-              width: 1100,
-              slidesPerView: 3,
-            },
             1400: {
               width: 1400,
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
           scrollbar={{ draggable: true }}

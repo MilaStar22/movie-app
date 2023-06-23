@@ -8,19 +8,25 @@
   gap: 10px;
   height: 40px;
   input, label {
-    border: 2px solid rgb(14, 13, 13);
-    border-radius: 10px;
+    border: 2px solid rgb(90, 88, 88);
+    border-radius: 5px;
   }
   input[type=submit] {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 5px 15px;
+    width: 100px;
+    &:hover {
+      background-color: rgb(234, 186, 26);
+      background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+      cursor: pointer;
+    }
   }
 }
 .movies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 25px;
   .movie {
     display: flex;
     flex-direction: column;
@@ -41,11 +47,11 @@
       margin-top: 10px;
       h2 {
         font-weight: 600;
-        @include mixins.adaptiv-font(23, 18);
+        @include mixins.adaptiv-font(20, 18);
       }
       p {
         font-weight: 300;
-        @include mixins.adaptiv-font(18, 13);
+        @include mixins.adaptiv-font(16, 13);
       }
     }
     a {

@@ -1,0 +1,203 @@
+@use "./mixins";
+
+.hidden {
+  opacity: 0; 
+  transition: opacity 0.7s;
+}
+.appear {
+  opacity: 1;
+}
+.about_wrapper {
+  position: relative;
+  .about  {
+    position: relative;
+    top: 0;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about_content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      min-height: 300px;
+      h1 {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+        @include mixins.adaptiv-font(38, 28);
+        letter-spacing: 1px;
+      }
+      .subtitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        gap: 15px;  
+        a {
+          @include mixins.adaptiv-font(22, 16);
+          font-weight: 400;
+          color: #6e777d;
+          text-decoration: none;
+        }
+        span {
+          width: 1px;
+          background-color: #fff;
+          color: rgba(white, 0);
+        }
+      }
+    }
+  }
+  .awards {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 100px 0;
+    box-sizing: border-box;
+    &_item {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 45px;
+        height: 45px;
+      } 
+      h2 {
+        margin-top: 15px;
+        @include mixins.adaptiv-font(22, 17);
+        font-weight: 600;
+      }
+      p {
+        @include mixins.adaptiv-font(17, 15);
+        line-height: 1.65;
+        color: #6e777d;
+      }
+    }
+    span {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 15%;
+        background-color: rgb(175, 171, 171);
+      } 
+    }
+  }
+  .about_experience {
+    margin: 0 auto;
+    padding: 100px 70px;
+    .img {
+      position: relative;
+      padding: 50px 0;
+      .about_experience_mark {
+        position: absolute;
+        box-sizing: border-box;
+        background-color: #fd6500;
+        color: #fff;
+        max-width: 160px;
+        padding: 24px 20px;
+        left: 10%;
+        top: -10%;
+        h3 {
+          @include mixins.adaptiv-font(100, 35);
+          line-height: 1.2;
+          font-weight: 800;  
+          letter-spacing: 2.16px;
+          margin-left: 4px;
+        }
+        span {
+          @include mixins.adaptiv-font(16, 10);
+          line-height: 1.6;
+          font-weight: 500; 
+          text-transform: uppercase; 
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        min-height: 400px;
+      }  
+    }
+    &_text {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      h4 {
+        display: block;
+        float: left;
+        width: 40%;
+        text-transform: uppercase;
+        color: #fd6500;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 4.16px;
+      }
+      &_title {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 70%;
+        h2 {
+          @include mixins.adaptiv-font(45, 20);
+          line-height: 1.2;
+          font-weight: 700;  
+          letter-spacing: 2.16px;
+        }
+        p {
+          @include mixins.adaptiv-font(18, 12);
+          line-height: 1.6;
+          font-weight: 500;  
+          letter-spacing: 1.16px;
+          color: #6e777d;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .awards {
+    flex-wrap: wrap;
+    span {
+      display: none;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .awards_item:not(:last-child) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(175, 171, 171);
+  }
+  .about_wrapper .about_experience .img .about_experience_mark {
+    max-width: 140px;
+    left: 2%;
+    top: -30%;
+  }
+}
+@media (max-width: 555px) {
+  .about_wrapper .about_experience {
+    padding: 100px 20px;
+    .img .about_experience_mark {
+      max-width: 100px;
+    }  
+  }
+}

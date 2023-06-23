@@ -5,6 +5,7 @@
 @import "Search";
 @import "MainSlider";
 @import "Contacts";
+@import "About";
 @import "NavWithImg";
 @import "Footer";
 @import "Error";
@@ -22,7 +23,7 @@ body {
   box-sizing: border-box; // avoid scroll
 }
 main {
-  padding: 1rem 0;
+  // padding: 1rem 0;
 }
 svg {
   width: 20px;

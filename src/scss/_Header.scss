@@ -3,7 +3,7 @@
 header {
   .header {
     display: grid;
-    grid-template-columns: 160px 1fr 200px;
+    grid-template-columns: 160px 1fr 170px;
     row-gap: 25px;
     background-color: black;
     justify-content: center;
@@ -11,6 +11,7 @@ header {
     padding: 15px 10px; 
     flex-wrap: wrap;
     box-sizing: border-box;
+    gap: 10px;
     .logo img {
       width: 160px;
       height: auto;
@@ -21,12 +22,12 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10%;  
+        gap: 5%;  
       }
       a {
         text-decoration: none;
         color: #fff;
-        @include mixins.adaptiv-font(25, 20);
+        @include mixins.adaptiv-font(25, 18);
         font-weight: normal;
         line-height: 28px;
         letter-spacing: 1px;

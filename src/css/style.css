@@ -59,7 +59,7 @@ table {
 
 header .header {
   display: grid;
-  grid-template-columns: 160px 1fr 200px;
+  grid-template-columns: 160px 1fr 170px;
   row-gap: 25px;
   background-color: black;
   justify-content: center;
@@ -67,6 +67,7 @@ header .header {
   padding: 15px 10px;
   flex-wrap: wrap;
   box-sizing: border-box;
+  gap: 10px;
 }
 header .header .logo img {
   width: 160px;
@@ -79,12 +80,12 @@ header .header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10%;
+  gap: 5%;
 }
 header .header nav a {
   text-decoration: none;
   color: #fff;
-  font-size: calc(20px + 5 * ((100vw - 320px) / 1080));
+  font-size: calc(18px + 7 * ((100vw - 320px) / 1080));
   font-weight: normal;
   line-height: 28px;
   letter-spacing: 1px;
@@ -233,19 +234,25 @@ header .header .burger-menu span {
   height: 40px;
 }
 .search_form input, .search_form label {
-  border: 2px solid rgb(14, 13, 13);
-  border-radius: 10px;
+  border: 2px solid rgb(90, 88, 88);
+  border-radius: 5px;
 }
 .search_form input[type=submit] {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 5px 15px;
+  width: 100px;
+}
+.search_form input[type=submit]:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+  cursor: pointer;
 }
 
 .movies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 25px;
 }
 .movies .movie {
   display: flex;
@@ -269,11 +276,11 @@ header .header .burger-menu span {
 }
 .movies .movie .about h2 {
   font-weight: 600;
-  font-size: calc(18px + 5 * ((100vw - 320px) / 1080));
+  font-size: calc(18px + 2 * ((100vw - 320px) / 1080));
 }
 .movies .movie .about p {
   font-weight: 300;
-  font-size: calc(13px + 5 * ((100vw - 320px) / 1080));
+  font-size: calc(13px + 3 * ((100vw - 320px) / 1080));
 }
 .movies .movie a {
   text-decoration: none;
@@ -382,6 +389,7 @@ header .header .burger-menu span {
   width: 100%;
   margin: 0 auto;
   max-width: 1400px;
+  padding-bottom: 50px;
 }
 .swiper_container .swiper {
   padding: 2rem;
@@ -539,6 +547,7 @@ header .header .burger-menu span {
   margin: 0 auto;
   width: 80vw;
   height: 400px;
+  padding-bottom: 50px;
 }
 .contacts_wrapper .map .map_marker {
   color: red;
@@ -559,6 +568,210 @@ header .header .burger-menu span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+
+.appear {
+  opacity: 1;
+}
+
+.about_wrapper {
+  position: relative;
+}
+.about_wrapper .about {
+  position: relative;
+  top: 0;
+}
+.about_wrapper .about img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about_wrapper .about .about_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  min-height: 300px;
+}
+.about_wrapper .about .about_content h1 {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: calc(28px + 10 * ((100vw - 320px) / 1080));
+  letter-spacing: 1px;
+}
+.about_wrapper .about .about_content .subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  gap: 15px;
+}
+.about_wrapper .about .about_content .subtitle a {
+  font-size: calc(16px + 6 * ((100vw - 320px) / 1080));
+  font-weight: 400;
+  color: #6e777d;
+  text-decoration: none;
+}
+.about_wrapper .about .about_content .subtitle span {
+  width: 1px;
+  background-color: #fff;
+  color: rgba(255, 255, 255, 0);
+}
+.about_wrapper .awards {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+.about_wrapper .awards_item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.about_wrapper .awards_item svg {
+  width: 45px;
+  height: 45px;
+}
+.about_wrapper .awards_item h2 {
+  margin-top: 15px;
+  font-size: calc(17px + 5 * ((100vw - 320px) / 1080));
+  font-weight: 600;
+}
+.about_wrapper .awards_item p {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 1080));
+  line-height: 1.65;
+  color: #6e777d;
+}
+.about_wrapper .awards span {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.about_wrapper .awards span::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 15%;
+  background-color: rgb(175, 171, 171);
+}
+.about_wrapper .about_experience {
+  margin: 0 auto;
+  padding: 100px 70px;
+}
+.about_wrapper .about_experience .img {
+  position: relative;
+  padding: 50px 0;
+}
+.about_wrapper .about_experience .img .about_experience_mark {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #fd6500;
+  color: #fff;
+  max-width: 160px;
+  padding: 24px 20px;
+  left: 10%;
+  top: -10%;
+}
+.about_wrapper .about_experience .img .about_experience_mark h3 {
+  font-size: calc(35px + 65 * ((100vw - 320px) / 1080));
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 2.16px;
+  margin-left: 4px;
+}
+.about_wrapper .about_experience .img .about_experience_mark span {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
+  line-height: 1.6;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.about_wrapper .about_experience .img img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  min-height: 400px;
+}
+.about_wrapper .about_experience_text {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.about_wrapper .about_experience_text h4 {
+  display: block;
+  float: left;
+  width: 40%;
+  text-transform: uppercase;
+  color: #fd6500;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 4.16px;
+}
+.about_wrapper .about_experience_text_title {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 70%;
+}
+.about_wrapper .about_experience_text_title h2 {
+  font-size: calc(20px + 25 * ((100vw - 320px) / 1080));
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 2.16px;
+}
+.about_wrapper .about_experience_text_title p {
+  font-size: calc(12px + 6 * ((100vw - 320px) / 1080));
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 1.16px;
+  color: #6e777d;
+}
+
+@media (max-width: 768px) {
+  .awards {
+    flex-wrap: wrap;
+  }
+  .awards span {
+    display: none;
+  }
+  .awards span::after {
+    display: none;
+  }
+  .awards_item:not(:last-child) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(175, 171, 171);
+  }
+  .about_wrapper .about_experience .img .about_experience_mark {
+    max-width: 140px;
+    left: 2%;
+    top: -30%;
+  }
+}
+@media (max-width: 555px) {
+  .about_wrapper .about_experience {
+    padding: 100px 20px;
+  }
+  .about_wrapper .about_experience .img .about_experience_mark {
+    max-width: 100px;
   }
 }
 nav li a img {
@@ -585,7 +798,7 @@ footer .footer-top .mail, footer .footer-top .phone {
   gap: 10px;
 }
 footer .footer-top a {
-  font-size: calc(27px + 18 * ((100vw - 320px) / 1080));
+  font-size: calc(27px + 8 * ((100vw - 320px) / 1080));
   font-weight: 400;
   color: #fff;
   transition: all 0.3s ease-out 0s;
@@ -659,7 +872,7 @@ footer .footer-wrapper .footer-content .social ul a {
 }
 footer .footer-copyright {
   color: #6e777d;
-  font-size: calc(12px + 6 * ((100vw - 320px) / 1080));
+  font-size: calc(12px + 3 * ((100vw - 320px) / 1080));
   font-weight: 600;
   display: flex;
   justify-content: space-between;
@@ -759,10 +972,6 @@ body {
   max-width: 1400px;
   padding: 0 15px;
   box-sizing: border-box;
-}
-
-main {
-  padding: 1rem 0;
 }
 
 svg {
