@@ -11,8 +11,8 @@
   margin: 60px;
   img {
     width: 100%;
-    min-width: 50%;
-    height: 100%;
+    max-width: 500px;
+    max-height: 700px;
     border-radius: 20px; 
     border: 2px solid hsl(240, 3%, 6%);
   }
@@ -32,6 +32,7 @@
       font-weight: 700;
     }
     h5 {
+      @include adaptiv-font(20, 16);
       color: rgb(22, 22, 207);
     }
     .movie_about {

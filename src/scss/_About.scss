@@ -84,7 +84,7 @@
       p {
         @include mixins.adaptiv-font(17, 15);
         line-height: 1.65;
-        color: #6e777d;
+        color: rgba(52, 46, 47, 0.8);
       }
     }
     span {
@@ -167,7 +167,7 @@
           line-height: 1.6;
           font-weight: 500;  
           letter-spacing: 1.16px;
-          color: #6e777d;
+          color: rgba(52, 46, 47, 0.8);
         }
       }
     }
