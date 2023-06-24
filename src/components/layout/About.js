@@ -66,7 +66,7 @@ function About () {
             <h3>10</h3>
             <span>years of experience</span>
           </div>
-          <img src={aboutExp}></img>
+          <img src={aboutExp} alt='bg-img'></img>
         </div>
       </section>
     </div>

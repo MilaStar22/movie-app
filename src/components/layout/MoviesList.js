@@ -5,6 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { Typography } from "@mui/material";
 import defaultImage from "../img/default_img.png";
+import sprite from "../img/sprites.svg";
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie/';
 const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
@@ -123,7 +124,12 @@ function MoviesList() {
             <h2>{movie.title}</h2>
             <p>{genre}</p>
           </div>
-          <Link to={ "/movie/" + movie.id }> More </Link>
+          <div className="favorite">
+            <Link to={ "/movie/" + movie.id }> More </Link>
+            <button to={'/movie/' + movie.id}>
+              <svg className="svg"><use href={sprite + "#favorite"} /></svg>
+            </button>
+          </div>
         </div>
       )
     });

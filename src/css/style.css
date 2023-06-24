@@ -258,7 +258,6 @@ header .header .burger-menu span {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 .movies .movie img {
   width: 100%;
@@ -282,21 +281,42 @@ header .header .burger-menu span {
   font-weight: 300;
   font-size: calc(13px + 3 * ((100vw - 320px) / 1080));
 }
-.movies .movie a {
+.movies .movie .favorite {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.movies .movie .favorite a {
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 10px 15px;
   color: #fff;
-  width: 30%;
-  margin-top: 10px;
   text-align: center;
   font-size: calc(13px + 5 * ((100vw - 320px) / 1080));
 }
-.movies .movie a:hover {
+.movies .movie .favorite a:hover {
   background-color: rgb(234, 186, 26);
   background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
   cursor: pointer;
+}
+.movies .movie .favorite button {
+  border-radius: 30%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #959292;
+}
+.movies .movie .favorite button svg {
+  fill: #090909;
+}
+.movies .movie .favorite button:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
 }
 
 .pagination {
@@ -379,11 +399,33 @@ header .header .burger-menu span {
 }
 .search {
   background-color: #fff;
+  display: none;
 }
 .search input {
   border: none;
   height: fit-content;
   z-index: 2;
+}
+
+.search-active {
+  position: relative;
+  top: 60px;
+  width: 500px;
+  margin-top: 10px;
+  display: block;
+}
+.search-active form input {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-items a {
+  text-decoration: none;
+  color: #fff;
+  padding-top: 5px;
+}
+.search-items a:hover {
+  color: #fd6500;
 }
 
 .swiper_container {
@@ -495,6 +537,9 @@ header .header .burger-menu span {
   width: 25px;
   height: 25px;
   fill: #000;
+}
+.contacts_wrapper .form_container .contacts_description .item_description svg:hover {
+  fill: #fd6500;
 }
 .contacts_wrapper .form_container .contacts_description .item_description .item_about h2 {
   font-size: calc(20px + 5 * ((100vw - 320px) / 1080));
@@ -651,6 +696,10 @@ header .header .burger-menu span {
 .about_wrapper .awards_item svg {
   width: 45px;
   height: 45px;
+  fill: #000;
+}
+.about_wrapper .awards_item svg:hover {
+  fill: #fd6500;
 }
 .about_wrapper .awards_item h2 {
   margin-top: 15px;

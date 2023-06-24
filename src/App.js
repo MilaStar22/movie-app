@@ -20,7 +20,7 @@ function App() {
         <Route path="/movie/:id" element={<OneMoviePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
-        {/* <Route path="/contacts" element={<WishListPage />} /> */}
+        {/* <Route path="/list/:id" element={<WishListPage />} /> */}
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/access denied" element={<ForbiddenPage />} />
       </Route>

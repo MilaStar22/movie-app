@@ -2,7 +2,6 @@ import { useState } from "react";
 import MainMenu from "../nav/MainMenu";
 import Search from "./Search";
 import logo from "../img/logo.png";
-// import { getFabUtilityClass } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import sprite from "../img/sprites.svg";
 
@@ -27,15 +26,19 @@ const links = [
 ]
 
 function Header() {
-  const [isBurgerActive, setBurgerActive] = useState(false);
   const navigate = useNavigate();
+  function redirectHome() {
+    navigate("/");
+  }
 
+  const [isBurgerActive, setBurgerActive] = useState(false);
   function toggleBurger() {
     setBurgerActive(!isBurgerActive);
   }
-  
-  function redirectHome() {
-    navigate("/");
+
+  const [isSearchActive, setSearchActive] = useState(false);
+  function toggleSearch() {
+    setSearchActive(!isSearchActive);
   }
 
   return (
@@ -51,12 +54,11 @@ function Header() {
 
         <div className="btn">
           <button><svg><use href={sprite + "#favorite"} /></svg></button>
-          <button><svg><use href={sprite + "#search"} /></svg></button>
+          <button onClick={toggleSearch}><svg><use href={sprite + "#search"} /></svg></button>
           <button><svg><use href={sprite + "#user_cabinet"} /></svg></button>
         </div>
 
-
-        <div className="search">
+        <div className={isSearchActive ? 'search-active' : 'search'}>
           <Search />
         </div>
         <div 

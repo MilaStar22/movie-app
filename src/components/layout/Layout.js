@@ -4,12 +4,12 @@ import Footer from "./Footer";
 import React, {useState} from "react";
 import sprite from "../img/sprites.svg";
 
-
 // Outlet allow set the constant Header and Footer for all pages
 function Layout () {
-  let [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("light");
+  
   function handleClick(){
-    setMode(mode == "light" ? "dark" : "light");
+    setMode(mode === "light" ? "dark" : "light");
   }
 
   return (

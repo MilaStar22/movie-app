@@ -57,7 +57,7 @@ function SingleMovie() {
             <h5> Date of release: { movie.release_date } </h5>
             <p className="movie_about">{movie.overview}</p>
             <span>Movie budget: {Math.round(movie.budget)/100000} millons dollars</span>
-            <h3> Movie rating: { movie.vote_average } </h3>
+            <h3> Movie rating: { movie.vote_average } / 10 </h3>
           </div>
         </div>
       )

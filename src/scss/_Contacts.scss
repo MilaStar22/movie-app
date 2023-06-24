@@ -66,6 +66,9 @@
           width: 25px;
           height: 25px;
           fill: #000;
+          &:hover {
+            fill: #fd6500;
+          }
         }
         .item_about {
           h2 {

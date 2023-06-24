@@ -1,8 +1,30 @@
 .search {
   background-color: #fff;
+  display: none;
   input {
     border: none;
     height: fit-content;
     z-index: 2;
+  }
+}
+.search-active {
+  position: relative;
+  top: 60px;
+  width: 500px;
+  margin-top: 10px;
+  display: block;
+  form input {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+.search-items {
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding-top: 5px;
+    &:hover {
+      color:#fd6500;
+    }
   }
 }

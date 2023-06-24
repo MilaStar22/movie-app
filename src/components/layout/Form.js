@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import sprite from "../img/sprites.svg";
 
@@ -20,6 +21,16 @@ const location = {
 
 
 function SendForm() {
+  const [showText, setShowText] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowText(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -34,7 +45,7 @@ function SendForm() {
             <svg><use href={sprite + "#icon-phone"} /></svg>
           </span>
           <div className='item_about'>
-            <h2>{phone.title}</h2>
+            <h2 className={`hidden ${showText ? 'appear' : ''}`}>{phone.title}</h2>
             <p>{phone.phone}</p>
             <p>{phone.description}</p>
           </div>

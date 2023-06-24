@@ -75,6 +75,10 @@
       svg {
         width: 45px;
         height: 45px;
+        fill: #000;
+        &:hover {
+          fill: #fd6500;
+        }
       } 
       h2 {
         margin-top: 15px;

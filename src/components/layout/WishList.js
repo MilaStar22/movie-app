@@ -2,7 +2,7 @@
 // import { useEffect, useState } from "react";
 // import defaultImage from "../img/default_img.png";
 
-// const baseURL = 'https://api.themoviedb.org/3/movie/';
+// const baseURL = 'https://api.themoviedb.org/3/list/';
 // const apiKey = 'b03d508a9e788070ca877f98f3f8bbba';
 // const imgBaseURL = "https://image.tmdb.org/t/p/w500";
 
@@ -12,7 +12,7 @@
 //   const [error, setError] = useState(null);
     
 //   async function fetchData() {
-//     axios.get(baseURL, {
+//     axios.post(baseURL, {
 //       params: {
 //         api_key: apiKey,
 //       }
