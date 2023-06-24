@@ -122,7 +122,7 @@ header .header .burger-menu span {
 @media (max-width: 768px) {
   header .header {
     grid-template-columns: 160px 1fr;
-    grid-template-areas: "logo burger" "menu menu" "search btn";
+    grid-template-areas: "logo burger" "menu menu" "search-active btn";
     grid-template-rows: auto auto auto;
     gap: 10px;
   }
@@ -131,6 +131,9 @@ header .header .burger-menu span {
   }
   header .header .search {
     grid-area: search;
+  }
+  header .header .search-active {
+    grid-area: search-active;
   }
   header .header .btn {
     grid-area: btn;
@@ -215,14 +218,28 @@ header .header .burger-menu span {
     font-weight: bolder;
   }
 }
+@media (max-width: 558px) {
+  header .header {
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "logo burger" "menu menu" "btn btn" "search-active search-active";
+  }
+  header .header .search-active {
+    top: 0;
+    min-width: 200px;
+  }
+}
 @media (max-width: 400px) {
   header .header {
     grid-template-columns: 160px 1fr;
-    grid-template-areas: "logo burger" "menu menu" "btn btn" "search search";
+    grid-template-areas: "logo burger" "menu menu" "btn btn" "search-active search-active";
   }
   header .header .btn {
     align-self: center;
     justify-self: center;
+  }
+  header .header .search-active {
+    top: 0;
+    min-width: 200px;
   }
 }
 .search_form {
@@ -345,16 +362,16 @@ header .header .burger-menu span {
 }
 .single-movie img {
   width: 100%;
-  max-width: 500px;
-  max-height: 700px;
+  min-width: 400px;
   border-radius: 20px;
   border: 2px solid hsl(240, 3%, 6%);
 }
 .single-movie .about_single_movie {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 15px;
-  margin-top: 10%;
   line-height: 28px;
 }
 .single-movie .about_single_movie .title {
@@ -367,7 +384,7 @@ header .header .burger-menu span {
   font-weight: 700;
 }
 .single-movie .about_single_movie h5 {
-  font-size: calc(16px + 4 * ((100vw - 320px) / 1090));
+  font-size: calc(13px + 7 * ((100vw - 320px) / 1090));
   color: rgb(22, 22, 207);
 }
 .single-movie .about_single_movie .movie_about {
@@ -385,6 +402,43 @@ header .header .burger-menu span {
   font-size: calc(13px + 5 * ((100vw - 320px) / 1090));
 }
 
+.video_container {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 60px;
+}
+.video_container button {
+  padding: 10px 20px;
+  font-size: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-self: start;
+  margin-left: 10%;
+  background-color: rgba(19, 18, 18, 0.8);
+  border: 1px solid rgb(19, 18, 18);
+  color: #fff;
+}
+.video_container button:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+}
+.video_container .video-none {
+  display: none;
+}
+.video_container .video-active {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .video_container .video-active iframe {
+    width: 100%;
+    min-width: 450px;
+  }
+}
 @media (max-width: 870px) {
   .single-movie .about_single_movie {
     line-height: 20px;
@@ -395,6 +449,15 @@ header .header .burger-menu span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+@media (max-width: 470px) {
+  .video_container .video-active iframe {
+    min-width: 250px;
+  }
+  .single-movie img {
+    width: 100%;
+    min-width: 250px;
   }
 }
 .search {
@@ -410,13 +473,12 @@ header .header .burger-menu span {
 .search-active {
   position: relative;
   top: 60px;
-  width: 500px;
+  min-width: 300px;
   margin-top: 10px;
   display: block;
 }
 .search-active form input {
-  width: 100%;
-  max-width: 500px;
+  width: 95%;
 }
 
 .search-items a {
@@ -848,7 +910,7 @@ footer .footer-top .mail, footer .footer-top .phone {
   gap: 10px;
 }
 footer .footer-top a {
-  font-size: calc(27px + 8 * ((100vw - 320px) / 1080));
+  font-size: calc(24px + 11 * ((100vw - 320px) / 1080));
   font-weight: 400;
   color: #fff;
   transition: all 0.3s ease-out 0s;

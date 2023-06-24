@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, A11y} from 'swiper';
+import { Navigation, Scrollbar, A11y, Autoplay} from 'swiper';
 import { SwiperNavButtons } from "./SwiperNavButtons";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -53,7 +53,7 @@ function MainSlider() {
     return (
       <div className='swiper_container'>
         <Swiper 
-          modules={[Navigation, Scrollbar, A11y]}
+          modules={[Navigation, Scrollbar, A11y, Autoplay]}
           spaceBetween={30}
           breakpoints= {{
             780: {
@@ -66,6 +66,10 @@ function MainSlider() {
             },
           }}
           scrollbar={{ draggable: true }}
+          autoplay={{
+            delay: 1500, 
+            disableOnInteraction: false,
+          }}
         >
           {items}
           <SwiperNavButtons />

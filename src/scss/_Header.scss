@@ -68,7 +68,7 @@ header {
     grid-template-columns: 160px 1fr;
     grid-template-areas: "logo burger"
                          "menu menu"
-                         "search btn";
+                         "search-active btn";
     grid-template-rows: auto auto auto;
     gap: 10px;
     .logo {
@@ -76,6 +76,9 @@ header {
     }
     .search {
       grid-area: search;
+    }
+    .search-active {
+      grid-area: search-active;
     }
     .btn {
       grid-area: btn;
@@ -165,16 +168,33 @@ header {
     }
   }
 }
+@media (max-width: 558px) {
+  header .header {
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "logo burger"
+                         "menu menu"
+                         "btn btn"
+                         "search-active search-active";
+    .search-active {
+      top: 0;
+      min-width: 200px;
+    }
+  }
+}
 @media (max-width: 400px) {
   header .header {
     grid-template-columns: 160px 1fr;
     grid-template-areas: "logo burger"
                          "menu menu"
                          "btn btn"
-                         "search search";
+                         "search-active search-active";
     .btn {
       align-self: center;
       justify-self: center;
+    }
+    .search-active {
+      top: 0;
+      min-width: 200px;
     }
   }
 }

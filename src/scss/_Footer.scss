@@ -15,7 +15,7 @@ footer {
       gap: 10px;
     }
     a {
-      @include mixins.adaptiv-font(35, 27);
+      @include mixins.adaptiv-font(35, 24);
       font-weight: 400;
       color: #fff;
       transition: all 0.3s ease-out 0s;

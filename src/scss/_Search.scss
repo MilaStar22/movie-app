@@ -10,12 +10,11 @@
 .search-active {
   position: relative;
   top: 60px;
-  width: 500px;
+  min-width: 300px;
   margin-top: 10px;
   display: block;
   form input {
-    width: 100%;
-    max-width: 500px;
+    width: 95%;
   }
 }
 .search-items {
