@@ -27,11 +27,11 @@
       font-weight: 700;
       color: rgb(22, 22, 207);
     }
-    h4 {
+    .genres {
       @include adaptiv-font(20, 16);
       font-weight: 700;
     }
-    h5 {
+    .release_date {
       @include adaptiv-font(20, 13);
       color: rgb(22, 22, 207);
     }
@@ -39,12 +39,12 @@
       width: 80%;
       @include adaptiv-font(20, 16);
     }
-    span {
+    .budget {
       @include adaptiv-font(18, 15);
       font-weight: 700;
       margin-top: 30px;
     }
-    h3 {
+    .rate {
       color: #fd6500;
       font-weight: 700;
       @include adaptiv-font(18, 13);

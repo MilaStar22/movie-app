@@ -53,7 +53,7 @@ function SendForm() {
         <div className='item_description'>
           <svg><use href={sprite + "#icon-email"} /></svg>
           <div className='item_about'>
-            <h2>{email.title}</h2>
+            <h2 className={`hidden ${showText ? 'appear' : ''}`}>{email.title}</h2>
             <p>{email.email}</p>
             <p>{email.description}</p>
           </div>
@@ -63,7 +63,7 @@ function SendForm() {
             <svg><use href={sprite + "#icon-location"} /></svg>
           </span>
           <div className='item_about'>
-            <h2>{location.title}</h2>
+            <h2 className={`hidden ${showText ? 'appear' : ''}`}>{location.title}</h2>
             <p>{location.location}</p>
             <p>{location.description}</p>
           </div>
