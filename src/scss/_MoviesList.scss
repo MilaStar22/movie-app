@@ -6,7 +6,8 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  height: 40px;
+  min-height: 40px;
+  flex-wrap: wrap;
   input, label {
     border: 2px solid rgb(90, 88, 88);
     border-radius: 5px;

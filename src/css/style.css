@@ -248,7 +248,8 @@ header .header .burger-menu span {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  height: 40px;
+  min-height: 40px;
+  flex-wrap: wrap;
 }
 .search_form input, .search_form label {
   border: 2px solid rgb(90, 88, 88);
@@ -379,11 +380,11 @@ header .header .burger-menu span {
   font-weight: 700;
   color: rgb(22, 22, 207);
 }
-.single-movie .about_single_movie h4 {
+.single-movie .about_single_movie .genres {
   font-size: calc(16px + 4 * ((100vw - 320px) / 1090));
   font-weight: 700;
 }
-.single-movie .about_single_movie h5 {
+.single-movie .about_single_movie .release_date {
   font-size: calc(13px + 7 * ((100vw - 320px) / 1090));
   color: rgb(22, 22, 207);
 }
@@ -391,12 +392,12 @@ header .header .burger-menu span {
   width: 80%;
   font-size: calc(16px + 4 * ((100vw - 320px) / 1090));
 }
-.single-movie .about_single_movie span {
+.single-movie .about_single_movie .budget {
   font-size: calc(15px + 3 * ((100vw - 320px) / 1090));
   font-weight: 700;
   margin-top: 30px;
 }
-.single-movie .about_single_movie h3 {
+.single-movie .about_single_movie .rate {
   color: #fd6500;
   font-weight: 700;
   font-size: calc(13px + 5 * ((100vw - 320px) / 1090));
@@ -910,7 +911,7 @@ footer .footer-top .mail, footer .footer-top .phone {
   gap: 10px;
 }
 footer .footer-top a {
-  font-size: calc(24px + 11 * ((100vw - 320px) / 1080));
+  font-size: calc(22px + 13 * ((100vw - 320px) / 1080));
   font-weight: 400;
   color: #fff;
   transition: all 0.3s ease-out 0s;
