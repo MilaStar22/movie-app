@@ -11,14 +11,16 @@ import "./css/style.css";
 import "./App.css";
 
 function App() {
+
   return (
-        <Routes basename="/movie-app">
+        <Routes>
           <Route path="/" element={<Layout />} >
             <Route index element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />
             <Route path="/movie/:id" element={<OneMoviePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
+            {/* <Route path="/list/:id" element={<WishListPage />} /> */}
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/access denied" element={<ForbiddenPage />} />
           </Route>
