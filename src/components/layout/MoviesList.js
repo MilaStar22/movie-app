@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import defaultImage from "../img/default_img.png";
 import sprite from "../img/sprites.svg";
 
-const baseURL = 'https://api.themoviedb.org/3/discover/movie/';
+const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
 const imgBaseURL = "https://image.tmdb.org/t/p/w500";

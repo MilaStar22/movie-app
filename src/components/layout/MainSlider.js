@@ -9,7 +9,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const baseURL = 'https://api.themoviedb.org/3/discover/movie/';
+const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
 const imgBaseURL = "https://image.tmdb.org/t/p/w500";
 
