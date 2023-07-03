@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, A11y, Autoplay} from 'swiper';
+import { Navigation, Scrollbar, A11y, Autoplay, Controller} from 'swiper';
 import { SwiperNavButtons } from "./SwiperNavButtons";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,10 +12,13 @@ import { Link } from "react-router-dom";
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
 const imgBaseURL = "https://image.tmdb.org/t/p/w500";
+// const imgBigImgURL = "https://image.tmdb.org/t/p/w1280";
+
 
 function MainSlider() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
 
   async function fetchData() {
       axios.get(baseURL, {
@@ -44,6 +47,7 @@ function MainSlider() {
         return <SwiperSlide key={index} className='one-slide'>
           <Link to={ "/movie/" + movie.id } >
             <img src={imgBaseURL + movie.poster_path} alt={movie.title} />
+            {/* <img className="slider_bg" src={imgBigImgURL + movie.poster_path} alt={movie.title} /> */}
           </Link>
         </SwiperSlide>
       }
@@ -53,7 +57,8 @@ function MainSlider() {
     return (
       <div className='swiper_container'>
         <Swiper 
-          modules={[Navigation, Scrollbar, A11y, Autoplay]}
+          onSwiper={setControlledSwiper}
+          modules={[Navigation, Scrollbar, A11y, Autoplay, Controller]}
           spaceBetween={30}
           breakpoints= {{
             780: {
@@ -66,10 +71,17 @@ function MainSlider() {
             },
           }}
           scrollbar={{ draggable: true }}
-          autoplay={{
-            delay: 2500, 
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 2500, 
+          //   disableOnInteraction: false,
+          // }}
+        >
+          {items}
+        </Swiper>
+        <Swiper
+          modules={[Navigation, Scrollbar, A11y, Autoplay, Controller]}
+          controller={{ control: controlledSwiper }}
+          spaceBetween={30}
         >
           {items}
           <SwiperNavButtons />

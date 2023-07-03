@@ -16,7 +16,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.0",
-    "react-router-dom": "^6.11.2",
+    "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "react-style-reset": "^1.3.2",
     "reset-css": "^5.0.1",
