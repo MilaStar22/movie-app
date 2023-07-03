@@ -1,5 +1,6 @@
 // import sprite from "../img/sprites.svg";
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import NavWithImg from "../nav/NavWithImg";
 import instagram from "../img/instagram-icon.png";
 import facebook from "../img/facebook-icon.png";
@@ -49,6 +50,11 @@ const address = {
 }
 
 function Footer() {
+  const navigate = useNavigate();
+  function redirectHome() {
+    navigate("/");
+  }
+
   return (
     <footer>
       <div className='footer-top container'>
@@ -64,7 +70,7 @@ function Footer() {
       <div className="footer-wrapper">
         <img className="bg" src={footer_bg} alt={footer_bg} />
         <div className="footer-content container">
-          <img className="logo" src={logo} alt="logo" />
+            <img className="logo" src={logo} alt="logo" onClick={redirectHome}/>
           <div className="address">
             <h2>{address.title}</h2>
             <p>{address.description}</p>
