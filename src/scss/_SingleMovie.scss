@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 15px;
+    gap: 10px;
     line-height: 28px;
     .title {
       @include adaptiv-font(25, 20);
@@ -45,9 +45,17 @@
       margin-top: 30px;
     }
     .rate {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
       color: #fd6500;
       font-weight: 700;
-      @include adaptiv-font(18, 13);
+      @include adaptiv-font(18, 15);
+      .star_icon {
+        width: 30px;
+        height: 30px;
+        fill: #e3a60b;
+      }  
     }
   }
 }

@@ -15,6 +15,10 @@ const links = [
       path: "/movies",
     },
     {
+      link: "Popular",
+      path: "/popular",
+    },
+    {
       link: "About",
       path: "/about",
     },
@@ -22,7 +26,6 @@ const links = [
       link: "Contacts",
       path: "/contacts",
     },
-
 ]
 
 function Header() {

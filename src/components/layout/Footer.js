@@ -1,4 +1,3 @@
-// import sprite from "../img/sprites.svg";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import NavWithImg from "../nav/NavWithImg";

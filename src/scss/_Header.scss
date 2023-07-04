@@ -22,12 +22,12 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 5%;  
+        gap: 3%;  
       }
       a {
         text-decoration: none;
         color: #fff;
-        @include mixins.adaptiv-font(25, 18);
+        @include mixins.adaptiv-font(25, 13);
         font-weight: normal;
         line-height: 28px;
         letter-spacing: 1px;

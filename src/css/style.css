@@ -80,12 +80,12 @@ header .header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  gap: 3%;
 }
 header .header nav a {
   text-decoration: none;
   color: #fff;
-  font-size: calc(18px + 7 * ((100vw - 320px) / 1080));
+  font-size: calc(13px + 12 * ((100vw - 320px) / 1080));
   font-weight: normal;
   line-height: 28px;
   letter-spacing: 1px;
@@ -372,7 +372,7 @@ header .header .burger-menu span {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 15px;
+  gap: 10px;
   line-height: 28px;
 }
 .single-movie .about_single_movie .title {
@@ -398,9 +398,17 @@ header .header .burger-menu span {
   margin-top: 30px;
 }
 .single-movie .about_single_movie .rate {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
   color: #fd6500;
   font-weight: 700;
-  font-size: calc(13px + 5 * ((100vw - 320px) / 1090));
+  font-size: calc(15px + 3 * ((100vw - 320px) / 1090));
+}
+.single-movie .about_single_movie .rate .star_icon {
+  width: 30px;
+  height: 30px;
+  fill: #e3a60b;
 }
 
 .video_container {
@@ -1074,6 +1082,65 @@ footer .footer-copyright a:hover {
   background-color: rgb(234, 186, 26);
 }
 
+.popular {
+  margin: 40px;
+}
+.popular ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.popular ul li {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.popular ul li a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 2px;
+}
+.popular ul li a img {
+  border-radius: 20px;
+  width: 100%;
+}
+.popular ul li a button {
+  z-index: 2;
+  padding: 10px 20px;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: rgb(19, 18, 18);
+  border: 1px solid rgb(19, 18, 18);
+  color: #fff;
+}
+.popular ul li a button:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+}
+
+.popular li.card-turn-effect {
+  animation: slow-transition 1.5s;
+}
+
+@keyframes slow-transition {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@media (max-width: 968px) {
+  .popular ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .popular ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 body {
   font-family: "Montserrat", sans-serif;
 }

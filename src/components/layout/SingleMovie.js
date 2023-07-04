@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import defaultImage from "../img/default_img.png";
 import DefaultVideo from "./DefaultVideo";
+import sprite from "../img/sprites.svg";
 
 const baseURL = 'https://api.themoviedb.org/3/movie/';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
@@ -38,13 +39,14 @@ function SingleMovie() {
   }
 
   useEffect( () => {
-    fetchData()
+    fetchData(id)
     // eslint-disable-next-line
   }, []);
 
   if (error) {
     return (<div className="error"> <h2>{ error }</h2></div>)
   } else if (movie) {
+    document.title = movie.title; // set movie title to page
     const items = genre_ids.map(genre => genre.name).join(" / ").toString();
     let genres = items;
     return (
@@ -63,7 +65,7 @@ function SingleMovie() {
               <h5 className="release_date"> Date of release: { movie.release_date } </h5>
               <p className="movie_about">{movie.overview}</p>
               <span className="budget">Movie budget: {Math.round(movie.budget)/100000} millons dollars</span>
-              <h3 className="rate"> Movie rating: { movie.vote_average.toFixed(1) } / 10 </h3>
+              <div className="rate"> <svg className="star_icon"><use href={sprite + "#star"} /></svg> { movie.vote_average.toFixed(1) } / 10 </div>
             </div>
         </div>
         <div className="video_container">

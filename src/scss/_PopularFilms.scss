@@ -1,0 +1,58 @@
+.popular {
+  margin: 40px;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    li {
+      padding: 7px;
+      border: 1px solid black;
+      border-radius: 20px;
+      a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        gap: 2px;
+        img {
+          border-radius: 20px;
+          width: 100%;
+        }
+        button {
+          z-index: 2;
+          padding: 10px 20px;
+          font-size: 25px;
+          border-radius: 10px;
+          background-color: rgba(19, 18, 18, 1);
+          border: 1px solid rgba(19, 18, 18, 1);
+          color: #fff;
+          &:hover {
+            background-color: rgb(234, 186, 26);
+            background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+          }
+        }      
+      }
+    }
+  }
+}
+.popular li.card-turn-effect {
+  animation: slow-transition 1.5s;
+}
+
+@keyframes slow-transition {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@media (max-width: 968px) {
+  .popular ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .popular ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

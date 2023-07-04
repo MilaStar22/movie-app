@@ -11,7 +11,6 @@ function Search() {
   const [search, setSearch] = useState('');
   const [filmSelected, setFilmSelected] = useState(false);
   const navigate = useNavigate(); // Added useNavigate hook for redirection
-  // const [redirectToHome, setRedirectToHome] = useState(false);
 
   async function fetchData(search = null) {
       axios.get(baseSearchURL, {

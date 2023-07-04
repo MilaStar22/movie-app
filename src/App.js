@@ -5,8 +5,10 @@ import ContactsPage from "./components/pages/ContactsPage";
 import AboutPage from "./components/pages/AboutPage";
 import MoviesPage from "./components/pages/MoviesPage";
 import OneMoviePage from "./components/pages/OneMoviePage";
+import PopularFilmsPage from './components/pages/PopularFilmsPage';
 import NotFoundPage from "./components/pages/NotFoundPage";
 import ForbiddenPage from "./components/pages/ForbiddenPage";
+import ActorsPage from './components/pages/ActorsPage';
 import "./css/style.css";
 import "./App.css";
 
@@ -20,6 +22,8 @@ function App() {
             <Route path="/movie/:id" element={<OneMoviePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/popular" element={<PopularFilmsPage />} />
+            <Route path="/actor/:id" element={<ActorsPage />} />
             {/* <Route path="/list/:id" element={<WishListPage />} /> */}
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/access denied" element={<ForbiddenPage />} />
