@@ -58,7 +58,7 @@ function Search() {
             <input 
               type="text"
               value={search}
-              placeholder="Search"
+              placeholder="...Search film"
               autoFocus={true}
               contentEditable="true"
               onChange={(e) => setSearch(e.target.value)}

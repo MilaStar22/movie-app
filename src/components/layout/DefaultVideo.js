@@ -2,7 +2,6 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 const DefaultVideo = ({ embedId }) => (
-  // <div className="video">
     <iframe 
       width="853"
       height='480'
@@ -12,7 +11,6 @@ const DefaultVideo = ({ embedId }) => (
       allowFullScreen
       title="defaultVideo"
     />
-  // </div>
 )
 DefaultVideo.propTypes = {
   embedId: PropTypes.string.isRequired

@@ -46,6 +46,25 @@
     transform: rotateY(0deg);
   }
 }
+form {
+  margin: 0 20px;
+  input {
+    height: 30px;
+    color: black;
+  }
+}
+.search-items {
+  margin: 0 20px;
+  .actor {
+    padding-top: 5px;
+    a {
+      color: black;
+      &:hover {
+        color:rgb(234, 186, 26);
+      }
+    }
+  }
+}
 @media (max-width: 968px) {
   .popular ul {
     grid-template-columns: repeat(2, 1fr);

@@ -51,7 +51,7 @@ function SearchActors() {
   } else {
     const actorItems = actors.map((actor, index) => (
       <div key={index} className="actor">
-        <Link to={"/actor/" + actor.id} onClick={handleActorSelect}>
+        <Link to={"/person/" + actor.id} onClick={handleActorSelect}>
           {actor.name}
         </Link>
       </div>

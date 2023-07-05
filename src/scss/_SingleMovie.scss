@@ -1,8 +1,4 @@
-@mixin adaptiv-font($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $layoutWidth: 1400 - 320;
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / 1090));
-}
+@use "./mixins";
 
 .single-movie {
   display: flex;
@@ -23,24 +19,24 @@
     gap: 10px;
     line-height: 28px;
     .title {
-      @include adaptiv-font(25, 20);
+      @include mixins.adaptiv-font(25, 20);
       font-weight: 700;
       color: rgb(22, 22, 207);
     }
     .genres {
-      @include adaptiv-font(20, 16);
+      @include mixins.adaptiv-font(20, 16);
       font-weight: 700;
     }
     .release_date {
-      @include adaptiv-font(20, 13);
+      @include mixins.adaptiv-font(20, 13);
       color: rgb(22, 22, 207);
     }
     .movie_about {
       width: 80%;
-      @include adaptiv-font(20, 16);
+      @include mixins.adaptiv-font(20, 16);
     }
     .budget {
-      @include adaptiv-font(18, 15);
+      @include mixins.adaptiv-font(18, 15);
       font-weight: 700;
       margin-top: 30px;
     }
@@ -50,7 +46,7 @@
       gap: 15px;
       color: #fd6500;
       font-weight: 700;
-      @include adaptiv-font(18, 15);
+      @include mixins.adaptiv-font(18, 15);
       .star_icon {
         width: 30px;
         height: 30px;

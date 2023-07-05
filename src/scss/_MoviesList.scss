@@ -1,7 +1,7 @@
 @use "./mixins";
 
 .search_form {
-  margin: 10px;
+  margin: 0 20px 20px 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -9,14 +9,17 @@
   min-height: 40px;
   flex-wrap: wrap;
   input, label {
-    border: 2px solid rgb(90, 88, 88);
-    border-radius: 5px;
+    padding: 0;
+  }
+  select {
+    height: 30px;
   }
   input[type=submit] {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 5px 15px;
     width: 100px;
+    height: 30px;
+    text-align: center;
     &:hover {
       background-color: rgb(234, 186, 26);
       background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));

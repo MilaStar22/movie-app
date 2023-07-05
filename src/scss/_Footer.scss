@@ -61,7 +61,7 @@ footer {
           font-weight: 600;
           color: #fff;
           margin-bottom: 10px;
-          @include adaptiv-font(18, 14);
+          @include mixins.adaptiv-font(18, 14);
         }
         p {
           @include mixins.adaptiv-font(16, 12);

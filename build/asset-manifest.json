@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/movie-app/static/css/main.a3bd15f2.css",
-    "main.js": "/movie-app/static/js/main.58a29903.js",
+    "main.css": "/movie-app/static/css/main.711d43a4.css",
+    "main.js": "/movie-app/static/js/main.7f6c376b.js",
     "static/media/contacts-bg.png": "/movie-app/static/media/contacts-bg.1ae58da13ca8d97a2539.png",
     "static/media/about-exp-bg.jpeg": "/movie-app/static/media/about-exp-bg.09a5fa7048c5592773bb.jpeg",
     "static/media/footer_bg.jpeg": "/movie-app/static/media/footer_bg.707f6543ac3b22100ff4.jpeg",
     "static/media/404.png": "/movie-app/static/media/404.8f0b01d0f57e8b5db650.png",
     "static/media/instagram-icon.png": "/movie-app/static/media/instagram-icon.9c9256caf8cf5996f400.png",
-    "static/media/sprites.svg": "/movie-app/static/media/sprites.745fa5ae80e7e1fde7802ec6116003a0.svg",
+    "static/media/sprites.svg": "/movie-app/static/media/sprites.d8de8a8792142c320c8f3cd977ba994e.svg",
     "index.html": "/movie-app/index.html",
-    "main.a3bd15f2.css.map": "/movie-app/static/css/main.a3bd15f2.css.map",
-    "main.58a29903.js.map": "/movie-app/static/js/main.58a29903.js.map"
+    "main.711d43a4.css.map": "/movie-app/static/css/main.711d43a4.css.map",
+    "main.7f6c376b.js.map": "/movie-app/static/js/main.7f6c376b.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3bd15f2.css",
-    "static/js/main.58a29903.js"
+    "static/css/main.711d43a4.css",
+    "static/js/main.7f6c376b.js"
   ]
 }

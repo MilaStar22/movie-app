@@ -9,5 +9,5 @@ root.render(
   <Router basename="/movie-app">
     <App />
   </Router>
-</React.StrictMode>
+  </React.StrictMode>
 );

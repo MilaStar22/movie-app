@@ -1,0 +1,83 @@
+@use "./mixins";
+
+.actor_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 60px;
+  img {
+    width: 100%;
+    min-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px; 
+    border: 2px solid hsl(240, 3%, 6%);
+  }
+  .about_actor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 20px;
+    .name {
+      @include mixins.adaptiv-font(25, 20);
+      font-weight: 700;
+      color: rgb(22, 22, 207);
+    }
+    .genres {
+      @include mixins.adaptiv-font(20, 16);
+      font-weight: 700;
+    }
+    .birthday_date {
+      @include mixins.adaptiv-font(20, 13);
+      color: rgb(22, 22, 207);
+    }
+    .birthday_place {
+      @include mixins.adaptiv-font(20, 13);
+      color: #fd6500;
+    }
+    .biography {
+      margin: 10px 0;
+      width: 95%;
+      @include mixins.adaptiv-font(18, 14);
+      height: 300px;
+      white-space: pre-wrap;
+      overflow: scroll;
+      text-overflow: ellipsis;
+    }
+    .rate {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      color: #fd6500;
+      font-weight: 700;
+      @include mixins.adaptiv-font(18, 15);
+      .star_icon {
+        width: 30px;
+        height: 30px;
+        fill: #e3a60b;
+      }  
+    }
+  }
+}
+@media (max-width: 870px) {
+  .about_actor {
+    line-height: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .actor_wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 470px) {
+  .actor_wrapper {
+    img {
+      width: 100%;
+      min-width: 250px;
+    }
+  }
+}
