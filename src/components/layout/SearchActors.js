@@ -60,6 +60,7 @@ function SearchActors() {
     return (
       <>
         <form onSubmit={handleSubmit}>
+          <span>Search actor</span>
           <label>
             <input
               type="text"

@@ -80,12 +80,12 @@ header .header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3%;
+  gap: 5%;
 }
 header .header nav a {
   text-decoration: none;
   color: #fff;
-  font-size: calc(13px + 12 * ((100vw - 320px) / 1080));
+  font-size: calc(15px + 10 * ((100vw - 320px) / 1080));
   font-weight: normal;
   line-height: 28px;
   letter-spacing: 1px;
@@ -201,10 +201,12 @@ header .header .burger-menu span {
   header .active nav ul {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 0;
     gap: 15px;
     background-color: rgb(234, 186, 26);
     background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+  }
+  header .active nav ul li:first-child {
+    padding-top: 10px;
   }
   header .active nav ul li:not(:last-child) {
     width: 50%;
@@ -313,7 +315,7 @@ header .header .burger-menu span {
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 10px 25px;
   color: #fff;
   text-align: center;
   font-size: calc(13px + 5 * ((100vw - 320px) / 1080));
@@ -324,12 +326,12 @@ header .header .burger-menu span {
   cursor: pointer;
 }
 .movies .movie .favorite button {
-  border-radius: 30%;
+  border-radius: 40%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px;
   border: 1px solid #959292;
 }
 .movies .movie .favorite button svg {
@@ -1135,11 +1137,12 @@ footer .footer-copyright a:hover {
   }
 }
 form {
-  margin: 0 20px;
+  margin: 0 40px;
 }
 form input {
   height: 30px;
   color: black;
+  margin-left: 10px;
 }
 
 .search-items {
@@ -1163,6 +1166,11 @@ form input {
 @media (max-width: 600px) {
   .popular ul {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  form input {
+    margin: 10px 0 0 0;
   }
 }
 .actor_wrapper {
@@ -1248,6 +1256,9 @@ form input {
 body {
   font-family: "Montserrat", sans-serif;
 }
+body:hover {
+  cursor: pointer;
+}
 
 .container {
   margin: 0 auto;
@@ -1302,6 +1313,47 @@ svg {
   width: 20px;
   height: 20px;
   fill: #fff;
+}
+
+header nav ul.dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  height: 0;
+  transform: translateY(-15%);
+}
+header nav ul.dropdown li {
+  padding: 10px 0 0 5px;
+  font-size: calc(13px + 5 * ((100vw - 320px) / 1080));
+}
+
+header nav ul.show {
+  position: absolute;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+  height: auto;
+  background-color: black;
+  opacity: 0.8;
+  min-width: 160px;
+  z-index: 2;
+}
+
+li.menu-items {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  header nav ul.show {
+    opacity: 1;
+    background-color: rgb(234, 186, 26);
+    background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+  }
+  header nav ul.dropdown li {
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -22,12 +22,12 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 3%;  
+        gap: 5%;  
       }
       a {
         text-decoration: none;
         color: #fff;
-        @include mixins.adaptiv-font(25, 13);
+        @include mixins.adaptiv-font(25, 15);
         font-weight: normal;
         line-height: 28px;
         letter-spacing: 1px;
@@ -150,10 +150,12 @@ header {
     ul {
       flex-direction: column;
       align-items: flex-start;
-      padding: 10px 0;
       gap: 15px;
       background-color: rgb(234, 186, 26);
       background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+      li:first-child {
+      padding-top: 10px;
+      }
       li:not(:last-child) {
         width: 50%;
         border-bottom: 1px solid black;

@@ -67,7 +67,7 @@
         text-decoration: none;
         background-color: rgba(0, 0, 0, 0.6);
         border-radius: 10px;
-        padding: 10px 15px;
+        padding: 10px 25px;
         color: #fff;
         text-align: center;
         @include mixins.adaptiv-font(18, 13);
@@ -78,12 +78,12 @@
         }
       }
       button {
-        border-radius: 30%;
+        border-radius: 40%;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5px 10px;
+        padding: 10px;
         border: 1px solid #959292;
         svg {
           fill: #090909;

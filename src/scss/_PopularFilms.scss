@@ -47,10 +47,11 @@
   }
 }
 form {
-  margin: 0 20px;
+  margin: 0 40px;
   input {
     height: 30px;
     color: black;
+    margin-left: 10px;
   }
 }
 .search-items {
@@ -73,5 +74,10 @@ form {
 @media (max-width: 600px) {
   .popular ul {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  form input {
+    margin: 10px 0 0 0; 
   }
 }

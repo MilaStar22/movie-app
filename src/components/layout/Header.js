@@ -1,34 +1,13 @@
 import { useState } from "react";
-import MainMenu from "../nav/MainMenu";
 import Search from "./Search";
 import logo from "../img/logo.png";
 import { useNavigate } from "react-router-dom";
 import sprite from "../img/sprites.svg";
+import Navbar from "../nav/Navbar";
 
-const links = [
-    {
-      link: "Home",
-      path: "/",
-    },
-    {
-      link: "Movies",
-      path: "/movies",
-    },
-    {
-      link: "Popular",
-      path: "/popular",
-    },
-    {
-      link: "About",
-      path: "/about",
-    },
-    {
-      link: "Contacts",
-      path: "/contacts",
-    },
-]
 
 function Header() {
+  
   const navigate = useNavigate();
   function redirectHome() {
     navigate("/");
@@ -53,7 +32,7 @@ function Header() {
         >
           <img src={logo} alt="logo"></img>
         </div>
-        <MainMenu links={links}/>
+        <Navbar />
 
         <div className="btn">
           <button><svg><use href={sprite + "#favorite"} /></svg></button>

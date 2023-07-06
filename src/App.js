@@ -24,7 +24,6 @@ function App() {
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/popular" element={<PopularFilmsPage />} />
             <Route path="/person/:id" element={<ActorsPage />} />
-            {/* <Route path="/list/:id" element={<WishListPage />} /> */}
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/access denied" element={<ForbiddenPage />} />
           </Route>
