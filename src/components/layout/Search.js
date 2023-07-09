@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
@@ -10,7 +10,6 @@ function Search() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [filmSelected, setFilmSelected] = useState(false);
-  const navigate = useNavigate(); // Added useNavigate hook for redirection
 
   async function fetchData(search = null) {
       axios.get(baseSearchURL, {
@@ -35,20 +34,22 @@ function Search() {
   const handleSubmit = (event) => {
     event.preventDefault()
     fetchData(search);
-    setFilmSelected(false); // Reset film selection when a new search is submitted
-    navigate("/");
   }
 
-  const handleFilmSelect = () => {
-    setFilmSelected(true); // Set filmSelected to true when a film is selected
+  const onClear = () => {
+    setSearch(''); // Clear the input when a film was selected
   }
   
+  const refreshPage = () => {
+    window.location.reload(false); // Refresh the page after the film selected
+  }
+
   if (error) {
     return (<div className="error"> <h2>{ error }</h2></div>)
   } else if (movies) {
     const items = movies.map((movie, index) => 
     <div key={index} className="movie">
-      <Link to={ "/movie/" + movie.id } onClick={handleFilmSelect}>{movie.title}</Link>
+      <Link to={ "/movie/" + movie.id } onClick={onClear}>{movie.title}</Link>
     </div>)
 
     return (
@@ -65,7 +66,7 @@ function Search() {
             />
           </label>
         </form>
-        {!filmSelected && <div className="search-items">{items}</div>}
+        {!filmSelected && <div className="search-items" onClick={refreshPage}>{items}</div>}
       </>
     )
   }
