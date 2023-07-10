@@ -15,10 +15,7 @@
     }
     .contacts_content {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include mixins.flex-center;
       z-index: 2;
       min-height: 300px;
       h1 {
@@ -83,7 +80,7 @@
         }
       }
     }
-    .form {
+    .form_contacts {
       display: grid;
       grid-template-areas: "name email"
                           "subject subject"
@@ -117,7 +114,8 @@
         grid-area: submit;
         background-color: rgba (0, 0, 0, 0.7);
         border: 1px solid #9b9696;
-        color: #171717;
+        background-color: #171717;
+        color: #fff;
         &:hover {
           background-color: rgb(234, 186, 26);
           background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
@@ -147,10 +145,11 @@
   }
 }
 @media (max-width: 472px) {
-  .contacts_wrapper .form_container .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .contacts_wrapper .form_container .form_contacts {
+    @include mixins.flex-center;
+    max-width: 300px; 
+    input {
+      width: 100%;
+    }
   }
 }

@@ -7,9 +7,9 @@ const phone = {
   phone: 'Inquiry : (+88) 487 - 365 - 254',
   description: 'Hotline : 5879 - 6985'
 };
-const email = {
+const mail = {
   title: 'Email',
-  email: 'faime@example.com',
+  mail: 'faime@example.com',
   description: 'career@example.fm'
 };
 const location = {
@@ -18,10 +18,12 @@ const location = {
   description: 'Unit D & E Venice, CA 90291'
 };
 
-
-
 function SendForm() {
   const [showText, setShowText] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [text, setText] = useState('');
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,9 +35,47 @@ function SendForm() {
 
   const {
     register,
-    handleSubmit,
     formState: { errors },
   } = useForm();
+
+    // get name value from form
+  function nameChangeHandler(event) {
+    setName(event.target.value);
+  }
+  // get email value from form
+  function emailChangeHandler(event) {
+    setEmail(event.target.value);
+  }
+  // get subject value from form
+  function subjectChangeHandler(event) {
+    setSubject(event.target.value);
+  }
+  // get text value from form
+  function textChangeHandler(event) {
+    setText(event.target.value);
+  }
+  // gather our data: name, email, subject and text
+  let allData = {
+    name: name,
+    email: email,
+    subject: subject,
+    text: text,
+  };
+  // clear inputs after submit (convert event.target to array + use from method to convert event.target to array + use forEach to go through every input to clear it)
+  function clearFields(event) {
+    Array.from(event.target).forEach((e) => (e.value = ""));
+  }
+  const submitFormHandler = event => {
+    alert('Form submitted');
+    event.preventDefault(); // prevent page refresh
+    console.log(allData);
+    clearFields(event);
+     // clear all input values in the form
+     setName('');
+     setEmail('');
+     setSubject('');
+     setText('');
+   };
 
   return (
     <div className='form_container'>
@@ -53,9 +93,9 @@ function SendForm() {
         <div className='item_description'>
           <svg><use href={sprite + "#icon-email"} /></svg>
           <div className='item_about'>
-            <h2 className={`hidden ${showText ? 'appear' : ''}`}>{email.title}</h2>
-            <p>{email.email}</p>
-            <p>{email.description}</p>
+            <h2 className={`hidden ${showText ? 'appear' : ''}`}>{mail.title}</h2>
+            <p>{mail.mail}</p>
+            <p>{mail.description}</p>
           </div>
         </div>
         <div className='item_description'>
@@ -70,20 +110,49 @@ function SendForm() {
         </div>
       </div>
       <form 
-        className='form'
-        onSubmit={handleSubmit((data) => console.log(data))}>
-        <input {...register('Name', { required: true })} placeholder='Name' className='input_name'/>
+        className='form_contacts'
+        onSubmit={submitFormHandler}
+      >
+        <input 
+          {...register('Name', { required: true })} 
+          type='text'
+          placeholder='Name'
+          className='input_name'
+          onChange={nameChangeHandler}
+        />
         {errors.Name && <p>Your name is required.</p>}
 
-        <input {...register('Email', { pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })} placeholder='Email' className='input_email'/>
-        {errors.Email && <p>Invalid email adress.</p>}
+        <input 
+          {...register('Email', { pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })} 
+          required={true} 
+          type="email"
+          placeholder='Email' 
+          className='input_email'
+          onChange={emailChangeHandler}
+        />
+        {errors.Email && <p>Invalid email address.</p>}
 
-        <input {...register('Subject', { required: true })} placeholder='Subject' className='input_subject'/>
+        <input 
+          {...register('Subject', { required: true })} 
+          type="text"
+          placeholder='Subject' 
+          className='input_subject'
+          onChange={subjectChangeHandler}
+        />
         {errors.Subject && <p>Please enter the subject.</p>}
 
-        <input {...register('Message', { required: true })} placeholder='Type your message...' className='input_message'/>
+        <input 
+          {...register('Message', { required: true })} 
+          type="text"
+          placeholder='Type your message...' 
+          className='input_message'
+          onChange={textChangeHandler}
+        />
         {errors.Message && <p>Please enter your message.</p>}
-        <input type="submit" className='input_submit'/>
+        <input 
+          type="submit" 
+          className='input_submit'
+        />
       </form>
     </div>
   );

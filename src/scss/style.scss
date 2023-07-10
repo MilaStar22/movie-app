@@ -28,6 +28,7 @@ body {
   box-sizing: border-box; // avoid scroll
 }
 main {
+  padding-top: 70px;
   padding-bottom: 30px;
 }
 
@@ -44,17 +45,21 @@ main {
   color: white;
 }
 .mode {
+  position: relative;
+  top: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  @include mixins.adaptiv-font(18, 14);
   gap: 10px;
   padding: 5px;
+  margin-bottom: 10px;
   button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 55px;
-    height: 45px;
+    width: 46px;
+    height: 42px;
     padding: 0;
     border-radius: 5px;
     .svg {
@@ -69,40 +74,80 @@ svg {
   height: 20px;
   fill: #fff;
 }
-header nav ul.dropdown {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  overflow: hidden;
-  height: 0;
-  transform: translateY(-15%);
-  li {
-    padding: 10px 0 0 5px;
-    @include mixins.adaptiv-font(18, 13);
+.login_form {
+  @include mixins.flex-center;
+  gap: 40px;
+  max-width: 400px;
+  margin: 0 auto;
+  .login {
+    @include mixins.flex-center;
+    padding-top: 50px;
+    gap: 30px;
+    input {
+      width: 300px;
+      height: 50px;
+    }
+    .login_submit {
+      background-color: black;
+      color: #fff;
+      &:hover {
+        background-color: rgb(234, 186, 26);
+        background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));    
+      }
+    }
+    .hover_text {
+      position: relative;
+      border-bottom: 1px dotted black;
+      font-size: 12px;
+    }
+    
+    .hover_text:before {
+      content: attr(data-hover);
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      background-color: black;
+      color: #fff;
+      padding: 2px;
+      border-radius: 5px;
+      transition: opacity 1s ease-in-out;
+      line-height: 20px;
+      position: absolute;
+      z-index: 1;
+    }
+    
+    .hover_text:hover:before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .registration_restore {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+    a {
+      text-decoration: none;
+      @include mixins.adaptiv-font(18, 14);
+      color: black;
+      &:hover {
+        color: rgb(234, 186, 26);
+      }
+    }
   }
 }
-header nav ul.show {
-  position: absolute;
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
-  height: auto;
-  background-color: black;
-  opacity: 0.8;
-  min-width: 160px;
-  z-index: 2; 
-}
-li.menu-items {
-  position: relative;
-}
 @media (max-width: 768px) {
-  header nav ul.show {
-    opacity: 1;
-    background-color: rgb(234, 186, 26);
-    background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
-  }  
-  header nav ul.dropdown li {
-    padding: 0;
+  main {
+    padding-top: 130px;
+  }
+}
+@media (max-width: 558px) {
+  main {
+    padding-top: 140px;
+  }
+}
+@media (max-width: 350px) {
+  .login_form .login input {
+    width: 200px;
+    height: 40px;
   }
 }

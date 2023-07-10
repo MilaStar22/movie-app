@@ -22,10 +22,7 @@
     }
     .about_content {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include mixins.flex-center;
       z-index: 2;
       min-height: 300px;
       h1 {
@@ -66,12 +63,9 @@
     padding: 100px 0;
     box-sizing: border-box;
     &_item {
-      display: flex;
       position: relative;
-      flex-direction: column;
+      @include mixins.flex-center;
       gap: 15px;
-      justify-content: center;
-      align-items: center;
       svg {
         width: 45px;
         height: 45px;

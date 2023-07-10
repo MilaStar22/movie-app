@@ -56,11 +56,8 @@
   }
 }
 .video_container {
-  display: flex;
+  @include mixins.flex-center;
   margin: 0 auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 15px;
   margin: 0 60px;
   button {

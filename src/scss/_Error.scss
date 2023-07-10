@@ -1,10 +1,7 @@
 @use "./mixins";
 
 .error {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-center;
   img {
     width: 70%;
   }

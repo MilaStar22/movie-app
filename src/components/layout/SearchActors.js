@@ -59,7 +59,7 @@ function SearchActors() {
 
     return (
       <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="search_actor">
           <span>Search actor</span>
           <label>
             <input
