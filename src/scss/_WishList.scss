@@ -52,11 +52,9 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 7px 25px;
+          @include mixins.adaptiv-font(18, 13);
+          padding: 10px 25px;
           border: 1px solid #959292;
-          svg {
-            fill: #090909;
-          }
           &:hover {
             background-color: rgb(234, 186, 26);
             background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));    
