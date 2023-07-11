@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    padding-bottom: 20px;
     .movie_add {
       display: flex;
       flex-direction: column;
