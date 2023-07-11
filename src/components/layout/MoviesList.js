@@ -22,7 +22,6 @@ function MoviesList() {
   const [genre_ids, setGenreIds] = useState([]);
   const [genre, setGenre] = useState('');
 
-
   // get data from API
   async function fetchData(currentPage, search = null) {
     axios.get(genresURL, {
@@ -126,7 +125,7 @@ function MoviesList() {
           </div>
           <div className="favorite">
             <Link to={ "/movie/" + movie.id }> More </Link>
-            <button to={'/movie/' + movie.id}>
+            <button>
               <svg className="svg"><use href={sprite + "#favorite"} /></svg>
             </button>
           </div>
@@ -147,7 +146,8 @@ function MoviesList() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </label>
-          <label>
+          <label style={{ fontSize: '12px' }}>
+            or chose genre:
             <select onChange={(e) => setGenre(e.target.value)}>
               {genre_option}
             </select>

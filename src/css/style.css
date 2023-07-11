@@ -436,6 +436,7 @@ li.menu-items {
 .single-movie .about_single_movie .movie_about {
   width: 80%;
   font-size: calc(16px + 4 * ((100vw - 320px) / 1080));
+  padding: 20px 0;
 }
 .single-movie .about_single_movie .budget {
   font-size: calc(15px + 3 * ((100vw - 320px) / 1080));
@@ -526,7 +527,6 @@ li.menu-items {
 
 .search-active {
   position: relative;
-  top: 60px;
   min-width: 300px;
   margin-top: 10px;
   display: block;
@@ -1371,8 +1371,8 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  max-width: 400px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .login_form .login {
   display: flex;
@@ -1383,7 +1383,7 @@ svg {
   gap: 30px;
 }
 .login_form .login input {
-  width: 300px;
+  min-width: 250px;
   height: 50px;
 }
 .login_form .login .login_submit {
@@ -1398,17 +1398,19 @@ svg {
   position: relative;
   border-bottom: 1px dotted black;
   font-size: 12px;
+  display: flex;
+  align-self: flex-start;
 }
 .login_form .login .hover_text:before {
   content: attr(data-hover);
   visibility: hidden;
   opacity: 0;
   width: 250px;
-  background-color: black;
-  color: #fff;
+  background-color: #fff;
+  color: black;
   padding: 2px;
   border-radius: 5px;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   line-height: 20px;
   position: absolute;
   z-index: 1;
@@ -1441,9 +1443,8 @@ svg {
     padding-top: 140px;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 482px) {
   .login_form .login input {
-    width: 200px;
     height: 40px;
   }
 }

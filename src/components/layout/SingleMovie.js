@@ -62,9 +62,9 @@ function SingleMovie() {
             <div className="about_single_movie">
               <h2 className="title">{movie.title}</h2>
               <h4 className="genres"> { genres } </h4>
-              <h5 className="release_date"> Date of release: { movie.release_date } </h5>
+              <h5 className="release_date"> Released year: { movie.release_date.substring(0, 4) } </h5>
               <p className="movie_about">{movie.overview}</p>
-              <span className="budget">Movie budget: {Math.round(movie.budget)/100000} millons dollars</span>
+              <span className="budget">Movie budget: {Math.round(movie.budget)/100000} millions dollars</span>
               <div className="rate"> <svg className="star_icon"><use href={sprite + "#star"} /></svg> { movie.vote_average.toFixed(1) } / 10 </div>
             </div>
         </div>

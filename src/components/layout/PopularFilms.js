@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchActors from "./SearchActors";
+import SearchActors from "../search/SearchActors";
 
 const baseURL = 'https://api.themoviedb.org/3/movie/popular';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';

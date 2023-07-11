@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';
 
-function Search() {
+function SearchFilm() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
@@ -72,4 +72,4 @@ function Search() {
   }
 }
 
-export default Search;
+export default SearchFilm;

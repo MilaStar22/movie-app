@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import contactsbg from "../img/contacts-bg.png";
 import { Link } from 'react-router-dom';
-import SendForm from "./Form";
-import GoogleMap from "./GoogleMap";
+import SendForm from "../contacts/Form";
+import GoogleMap from "../contacts/GoogleMap";
 
 function Contacts() {
   const [showText, setShowText] = useState(false);

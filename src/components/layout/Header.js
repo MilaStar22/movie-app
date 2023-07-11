@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "./Search";
+import SearchFilm from "../search/SearchFilm";
 import logo from "../img/logo.png";
 import { useNavigate, Link } from "react-router-dom";
 import sprite from "../img/sprites.svg";
@@ -35,13 +35,13 @@ function Header() {
         <Navbar />
 
         <div className="btn">
-          <button><svg><use href={sprite + "#favorite"} /></svg></button>
+          <Link to='/list'><button><svg><use href={sprite + "#favorite"} /></svg></button></Link>
           <button onClick={toggleSearch}><svg><use href={sprite + "#search"} /></svg></button>
           <Link to='/login'><button><svg><use href={sprite + "#user_cabinet"} /></svg></button></Link>
         </div>
 
         <div className={isSearchActive ? 'search-active' : 'search'}>
-          <Search />
+          <SearchFilm />
         </div>
         <div 
           className={isBurgerActive ? "burger-menu burger-menu-active" : "burger-menu"} 
