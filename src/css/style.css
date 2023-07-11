@@ -1308,7 +1308,6 @@ footer .footer-copyright a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-  padding-bottom: 20px;
 }
 .wish_list_wrapper .wish_list_movies .movie_add {
   display: flex;
@@ -1332,6 +1331,7 @@ footer .footer-copyright a:hover {
   align-items: center;
   gap: 15px;
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 .wish_list_wrapper .wish_list_movies .movie_add .favorite a {
   text-decoration: none;

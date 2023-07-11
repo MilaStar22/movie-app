@@ -9,11 +9,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    padding-bottom: 20px;
     .movie_add {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;    
+      justify-content: space-between;
       img {
         width: 100%;
         height: auto;
@@ -31,6 +30,7 @@
         align-items: center;
         gap: 15px;
         margin-top: 20px;
+        padding-bottom: 20px;    
         a {
           text-decoration: none;
           background-color: rgba(0, 0, 0, 0.6);

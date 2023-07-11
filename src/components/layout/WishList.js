@@ -25,11 +25,11 @@ function WishList() {
   return (
     <div className='wish_list_wrapper container'>
       <h2>My Wish List</h2>
-      {favorites.length === 0 ? (
-        <p>No favorites movies. Add some!</p>
-      ) : (
-        favorites.map((movie) => (
-          <div className='wish_list_movies'>
+      <div className='wish_list_movies'>
+        {favorites.length === 0 ? (
+          <p>No favorites movies. Add some!</p>
+        ) : (
+          favorites.map((movie) => (
             <div key={movie.id} className='movie_add'>
               <img
                 src={movie.poster_path ? imgBaseURL + movie.poster_path : defaultImage}
@@ -42,9 +42,9 @@ function WishList() {
                 </button>
               </div>
             </div>
-          </div>
-        ))
-      )}
+          ))
+        )}
+      </div>
     </div>
   );
 }
