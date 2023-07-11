@@ -10,6 +10,7 @@ import PopularFilmsPage from './components/pages/PopularFilmsPage';
 import NotFoundPage from "./components/pages/NotFoundPage";
 import ForbiddenPage from "./components/pages/ForbiddenPage";
 import ActorsPage from './components/pages/ActorsPage';
+import WishListPage from './components/pages/WishListPage';
 import "./css/style.css";
 import "./App.css";
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/popular" element={<PopularFilmsPage />} />
             <Route path="/person/:id" element={<ActorsPage />} />
+            <Route path="/wishlist" element={<WishListPage />} />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/access denied" element={<ForbiddenPage />} />
           </Route>

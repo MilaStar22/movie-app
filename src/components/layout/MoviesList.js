@@ -21,6 +21,7 @@ function MoviesList() {
   const [search, setSearch] = useState('');
   const [genre_ids, setGenreIds] = useState([]);
   const [genre, setGenre] = useState('');
+  const [favorites, setFavorites] = useState([]);
 
   // get data from API
   async function fetchData(currentPage, search = null) {
@@ -84,6 +85,17 @@ function MoviesList() {
       // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (storedFavorites) {
+      setFavorites(storedFavorites);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
   const handleChange = (event, value) => {
     setPage(value);
     fetchData(value, search, genre);
@@ -93,6 +105,17 @@ function MoviesList() {
     event.preventDefault()
     fetchData(page, search, genre)
   }
+
+  const addToFavorites = (movie) => {
+    // Check if the movie is already in favorites
+    const isMovieInFavorites = favorites.some((favMovie) => favMovie.id === movie.id);
+  
+    if (isMovieInFavorites) {
+      return; // Exit the function without adding the movie
+    }
+  
+    setFavorites([...favorites, movie]);
+  };
   
   if (error) {
     return (<div className="error"> <h2>{ error }</h2></div>)
@@ -125,7 +148,7 @@ function MoviesList() {
           </div>
           <div className="favorite">
             <Link to={ "/movie/" + movie.id }> More </Link>
-            <button>
+            <button onClick={() => addToFavorites(movie)}>
               <svg className="svg"><use href={sprite + "#favorite"} /></svg>
             </button>
           </div>
@@ -147,7 +170,7 @@ function MoviesList() {
             />
           </label>
           <label style={{ fontSize: '12px' }}>
-            or chose genre:
+            or choose genre:
             <select onChange={(e) => setGenre(e.target.value)}>
               {genre_option}
             </select>

@@ -35,7 +35,7 @@ function Header() {
         <Navbar />
 
         <div className="btn">
-          <Link to='/list'><button><svg><use href={sprite + "#favorite"} /></svg></button></Link>
+          <Link to='/wishlist'><button><svg><use href={sprite + "#favorite"} /></svg></button></Link>
           <button onClick={toggleSearch}><svg><use href={sprite + "#search"} /></svg></button>
           <Link to='/login'><button><svg><use href={sprite + "#user_cabinet"} /></svg></button></Link>
         </div>

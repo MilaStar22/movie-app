@@ -1298,6 +1298,77 @@ footer .footer-copyright a:hover {
     min-width: 250px;
   }
 }
+.wish_list_wrapper h2 {
+  font-weight: 600;
+  font-size: calc(23px + 7 * ((100vw - 320px) / 1080));
+  text-align: center;
+  padding: 20px 0;
+}
+.wish_list_wrapper .wish_list_movies {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+.wish_list_wrapper .wish_list_movies .movie_add {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wish_list_wrapper .wish_list_movies .movie_add img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.wish_list_wrapper .wish_list_movies .movie_add h3 {
+  font-weight: 600;
+  font-size: calc(18px + 2 * ((100vw - 320px) / 1080));
+  text-align: center;
+  padding-top: 20px;
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite a {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 10px 25px;
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  font-size: calc(13px + 5 * ((100vw - 320px) / 1080));
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite a:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+  cursor: pointer;
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite button {
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 25px;
+  border: 1px solid #959292;
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite button svg {
+  fill: #090909;
+}
+.wish_list_wrapper .wish_list_movies .movie_add .favorite button:hover {
+  background-color: rgb(234, 186, 26);
+  background-image: linear-gradient(to right, rgba(234, 186, 26, 0), rgba(255, 0, 0, 0.6));
+}
+
+@media (max-width: 540px) {
+  .wish_list_wrapper .wish_list_movies {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 body {
   font-family: "Montserrat", sans-serif;
 }

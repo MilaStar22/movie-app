@@ -1,0 +1,72 @@
+.wish_list_wrapper {
+  h2 {
+    font-weight: 600;
+    @include mixins.adaptiv-font(30, 23);
+    text-align: center;
+    padding: 20px 0;
+  }
+  .wish_list_movies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    .movie_add {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;    
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; 
+      }
+      h3 {
+        font-weight: 600;
+        @include mixins.adaptiv-font(20, 18);
+        text-align: center;
+        padding-top: 20px;
+      }
+      .favorite {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        a {
+          text-decoration: none;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 10px;
+          padding: 10px 25px;
+          color: #fff;
+          width: 60px;
+          text-align: center;
+          @include mixins.adaptiv-font(18, 13);
+          &:hover {
+            background-color: rgb(234, 186, 26);
+            background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));
+            cursor: pointer;
+          }
+        }
+        button {
+          border-radius: 10px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 7px 25px;
+          border: 1px solid #959292;
+          svg {
+            fill: #090909;
+          }
+          &:hover {
+            background-color: rgb(234, 186, 26);
+            background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));    
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .wish_list_wrapper .wish_list_movies {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
