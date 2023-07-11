@@ -1,0 +1,49 @@
+@use "./mixins";
+
+.login_form {
+  @include mixins.flex-center;
+  gap: 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  .login {
+    @include mixins.flex-center;
+    padding-top: 50px;
+    gap: 30px;
+    input {
+      min-width: 250px;
+      height: 50px;
+    }
+    .login_submit {
+      background-color: black;
+      color: #fff;
+      padding: 10px 60px;
+      &:hover {
+        background-color: rgb(234, 186, 26);
+        background-image: linear-gradient(to right, rgba(234,186,26,0), rgba(255,0,0,0.6));    
+      }
+    }
+    small {
+      color: red;
+      @include mixins.adaptiv-font(14,12);
+      align-self: flex-start;
+    }
+  }
+  .registration_restore {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+    a {
+      text-decoration: none;
+      @include mixins.adaptiv-font(18, 14);
+      color: black;
+      &:hover {
+        color: rgb(234, 186, 26);
+      }
+    }
+  }
+}
+@media (max-width: 482px) {
+  .login_form .login input {
+    height: 40px;
+  }
+}

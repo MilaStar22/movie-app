@@ -12,7 +12,6 @@ import ForbiddenPage from "./components/pages/ForbiddenPage";
 import ActorsPage from './components/pages/ActorsPage';
 import WishListPage from './components/pages/WishListPage';
 import "./css/style.css";
-import "./App.css";
 
 function App() {
 
