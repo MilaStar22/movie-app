@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const baseSearchURL = 'https://api.themoviedb.org/3/search/movie';
 const apiKey = '307fd0a82be6c313814e4ab1e538e172';

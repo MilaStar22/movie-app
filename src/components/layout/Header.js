@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import SearchFilm from "../search/SearchFilm";
 import logo from "../img/logo.png";
-import { useNavigate, Link } from "react-router-dom";
 import sprite from "../img/sprites.svg";
 import Navbar from "../nav/Navbar";
 

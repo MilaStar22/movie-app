@@ -68,7 +68,7 @@ function MainSlider() {
           scrollbar={{ draggable: true }}
           autoplay={{
             delay: 2500, 
-            disableOnInteraction: false,
+            disableOnInteraction: true,
           }}
         >
           {items}

@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import defaultImage from "../img/default_img.png";
 import sprite from "../img/sprites.svg";
 

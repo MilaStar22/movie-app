@@ -1,4 +1,4 @@
-// Link allow prevents reloading pages, navLink = the same + add the class='active' to active page
+// Link allow prevents reloading pages, NavLink = the same + add the class='active' to active page
 import { NavLink } from 'react-router-dom';
 import {useState, useRef} from "react";
 import Dropdown from './Dropdown';

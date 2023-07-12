@@ -16,7 +16,7 @@ export default function Login() {
     });
 
     const resetAsyncForm = useCallback(async () => {
-      const result = await fetch('./api/formValues.json'); // result: { firstName: 'test', lastName: 'test2' }
+      const result = await fetch('./api/formValues.json'); 
       reset(result); // asynchronously reset your form values
     }, [reset]);
     

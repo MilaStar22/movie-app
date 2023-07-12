@@ -1,6 +1,6 @@
-import contactsbg from "../img/contacts-bg.png";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
+import contactsbg from "../img/contacts-bg.png";
 import sprite from "../img/sprites.svg";
 import aboutExp from "../img/about-exp-bg.jpeg";
 

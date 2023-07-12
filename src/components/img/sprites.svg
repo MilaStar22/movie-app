@@ -207,8 +207,3 @@
   </symbol>
 </defs>
 </svg>
-
-<!--insert the sprite icon-->
-      <!-- <svg>
-        <use href={sprite + "#icon-location"} />
-      </svg> -->

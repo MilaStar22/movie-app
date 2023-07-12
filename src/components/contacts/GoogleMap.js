@@ -23,10 +23,6 @@ export default function GoogleMap(){
           lat={33.942786}
           lng={-118.410000}
           text= "Map Point"
-          // icon={{
-          //   url: "https://i.postimg.cc/30jd33nS/Pin.png",
-          //   scaledSize: new window.google.maps.Size(100, 100),
-          // }}
         />
       </GoogleMapReact>
     </div>
